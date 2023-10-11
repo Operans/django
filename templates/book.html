@@ -1,17 +1,22 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Books</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>My books</h1>
-    {%for i in book_key%}
-    <h1>{{i.title}}</h1>
-    <p>{{i.description}}</p>
-    <img src="{{i.image.url}}">
-    <p>{{i.cost}}</p>
-    <p>{{i.created_date}}</p>
-    {% endfor %}
+<h1>Книги 2023</h1>
+
+    <ul>
+        {%for i in book_key%}
+        <li>
+            <h1>{{i.title}}</h1>
+            <p>{{i.created_date}}</p>
+            <button><a href="/book_detail/{{i.id}}">Далее</a></button>
+        </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

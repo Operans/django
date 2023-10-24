@@ -7,7 +7,9 @@ class BookForm(forms.ModelForm):
         model = models.Book
         fields = '__all__'
 
+
 class ReviewForm(forms.ModelForm):
     class Meta:
-        models = models.ReviewBook;
+        model = models.ReviewBook
         fields = '__all__'
+

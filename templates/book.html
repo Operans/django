@@ -10,10 +10,12 @@
 <h1>Книги 2023</h1>
 <a href="/add-cooment/"> оставить отзыв</a>
 <a href="/create_book/">Добавить</a>
-<a href="/book_list/">Удалить</a>
-<a href="#">Изменить</a>
+<form action="{% url 'search' %}" method="GET" class="d-flex" role="search">
+    <input class="form-control me-2" type="text" name="q" type="search" placeholder="Поиск" aria-label="Поиск">
+    <button class="btn btn-outline-success" type="submit">Поиск</button>
+</form>
     <ul>
-        {%for i in book_key%}
+        {%for i in object_list%}
         <li>
             <h1>{{i.title}}</h1>
             <p>{{i.created_date}}</p>

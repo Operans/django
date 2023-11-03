@@ -10,7 +10,7 @@ class Book(models.Model):
 
     title = models.CharField(max_length=100)
     description = models.TextField()
-    image = models.ImageField(upload_to='')
+    image = models.FileField(upload_to='', null=True)
     genre = models.CharField(max_length=100, choices= GENRE, default = GENRE[0],  null=True)
     video = models.URLField(null=True)
     cost = models.IntegerField()

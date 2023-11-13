@@ -8,7 +8,7 @@ from django.views import generic
 
 class ProductListView(generic.ListView):
 
-    queryset = ProductCL.objects.filter().order_by('-id')  # for filter order_by('-id')
+    queryset = ProductCL.objects.all()  # for filter order_by('-id')
     template_name = 'cloth/product_list.html'
 
     def get_queryset(self):
